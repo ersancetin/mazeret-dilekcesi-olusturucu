@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mazeret Dilekçesi Oluşturucu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Mazeret Dilekçesi Oluşturucu</h1>
+            <span class="badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                Veriler tarayıcınızda kalır
+            </span>
+        </div>
+    </header>
+
+    <main>
+        <section id="upload-section">
+            <div class="card upload-card">
+                <div id="drop-zone" tabindex="0" role="button" aria-label="Excel dosyası yükle">
+                    <div class="drop-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                            <polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                    </div>
+                    <p class="drop-text">UYAP Excel dosyasını sürükleyin veya tıklayın</p>
+                    <p class="drop-hint">.xlsx veya .xls</p>
+                    <input type="file" id="file-input" accept=".xlsx,.xls" aria-hidden="true">
+                </div>
+                <div class="format-hint">
+                    <span class="format-path">UYAP Avukat Portal &rarr; Duruşmalarım &rarr; Excel'e Aktar</span>
+                    <span class="format-cols">A: Birim &middot; B: Dosya No &middot; D: Duruşma Tarihi</span>
+                </div>
+            </div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-icon info-icon--how">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <div>
+                        <strong>Nasıl Çalışır?</strong>
+                        <p>UYAP duruşma listenizi yükleyin, aynı güne denk gelen duruşmalar tespit edilsin ve her biri için UDF formatında mazeret dilekçesi taslağı oluşturulsun.</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon info-icon--privacy">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                    </div>
+                    <div>
+                        <strong>Veri Güvenliği</strong>
+                        <p>Tüm işlemler tarayıcınızda gerçekleşir. Hiçbir veri sunucuya gönderilmez, saklanmaz veya üçüncü taraflarla paylaşılmaz.</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon info-icon--warn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <div>
+                        <strong>Sorumluluk Reddi</strong>
+                        <p>Oluşturulan dilekçeler taslak niteliğindedir. UYAP'a yüklemeden önce içeriğini kontrol etmeniz önerilir. Kullanım sorumluluğu kullanıcıya aittir.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="info-section" class="hidden">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Avukat Bilgileri</h2>
+                    <p class="card-desc">Bu bilgiler yalnızca dilekçeye eklenir, hiçbir yerde saklanmaz.</p>
+                </div>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="lawyer-name">Ad Soyad</label>
+                        <input type="text" id="lawyer-name" placeholder="Ad Soyad">
+                    </div>
+                    <div class="form-field">
+                        <label for="baro-name">Baro</label>
+                        <input type="text" id="baro-name" placeholder="İstanbul">
+                    </div>
+                    <div class="form-field">
+                        <label for="baro-sicil">Sicil No</label>
+                        <input type="text" id="baro-sicil" placeholder="12345">
+                    </div>
+                    <div class="form-field full">
+                        <label for="lawyer-address">Adres</label>
+                        <textarea id="lawyer-address" rows="2" placeholder="Büro adresi"></textarea>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button id="back-to-upload" class="btn btn-ghost">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                        Geri
+                    </button>
+                    <button id="continue-btn" class="btn btn-primary">Devam Et</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="result-section" class="hidden">
+            <div class="stats-bar" id="stats"></div>
+            <div class="toolbar">
+                <div class="search-wrap">
+                    <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" id="search-input" placeholder="Birim veya dosya no ara...">
+                    <button id="search-clear" class="search-clear hidden" type="button">&times;</button>
+                </div>
+                <div class="toolbar-actions">
+                    <button id="download-all-btn" class="btn btn-primary">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Tümünü İndir
+                    </button>
+                    <button id="reset-btn" class="btn btn-outline">Yeni Dosya</button>
+                </div>
+            </div>
+            <div id="progress-bar" class="hidden">
+                <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+                <p id="progress-text"></p>
+            </div>
+            <div id="days-list"></div>
+        </section>
+
+        <div id="error-toast" class="error-toast hidden" role="alert"></div>
+    </main>
+
+    <footer>
+        <p>Tüm veriler yalnızca tarayıcınızda işlenir, hiçbir bilgi sunucuya iletilmez veya saklanmaz.</p>
+        <p>Oluşturulan dilekçeler taslak niteliğindedir. Kullanım sorumluluğu kullanıcıya aittir.</p>
+        <div class="footer-author">
+            Made by Ersan Cetin
+            <span class="footer-sep">&middot;</span>
+            <a href="https://github.com/ersancetin" target="_blank" rel="noopener">GitHub</a>
+            <span class="footer-sep">&middot;</span>
+            <a href="https://linkedin.com/in/ersan-cetin" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
